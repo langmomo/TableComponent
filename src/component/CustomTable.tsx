@@ -15,7 +15,7 @@ export default class CustomTable extends React.Component<{},CustomTableState>{
         rows:[
             {
                 name: "default",
-                age: "default",
+                age: "0",
                 address: "default",
                 id: 1,
                 edit: false

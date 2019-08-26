@@ -1,7 +1,7 @@
 import React from "react";
 import {TableRow} from "./TableRow";
 import Table from 'react-bootstrap/Table';
-import Row from './Row';
+import Row from './Cell';
 interface TableProps{
     columns: string[];
     rows?: TableRow[];
@@ -80,21 +80,7 @@ export default class MyTable extends React.Component<TableProps,TableState>{
                                :
                                Object.keys(row).map((key)=>{
                                 if(key !="id" && key !="edit"){
-                                    return (<Row name={row[key]} col={key} id={row.id} save={this.save} cancel={this.cancel}></Row>)
-                                    // return (
-                                    //     <td>
-                                    //         <input
-                                    //         type="text"
-                                    //         value={row[key]}
-                                            
-                                    //         onChange={(e)=>{
-                                    //             row[key] = e.currentTarget.value
-                                    //             this.setState({rows: rows})
-                                                
-                                    //         }
-                                    //         }
-                                    //         ></input>
-                                    //     </td>)
+                                    return (<Row name={row[key]} col={key} id={row.id} type={key=="age"? "number" : "text"}save={this.save} cancel={this.cancel}></Row>)
                                 }     
 
                             })
@@ -103,8 +89,11 @@ export default class MyTable extends React.Component<TableProps,TableState>{
                             <td>
                                 <button onClick={()=>
                                     {
-                                        this.props.save(row, false, false)
-                                
+                                        if(row.name && row.address && row.age){
+                                            this.props.save(row, false, false)
+                                        } else{
+                                            alert("please save each column. name, address, age field cannot be empty")
+                                        }
                                     }
                                 }>{btn_name}</button>
                                 {btn_name=="save"  && 
