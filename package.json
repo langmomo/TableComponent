@@ -37,12 +37,12 @@
     "bootstrap": "^3.4.1",
     "css-loader": "^3.2.0",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "prop-types": "^15.7.2",
     "react-bootstrap": "^1.0.0-beta.12",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.0"
   }
 }
